@@ -1,6 +1,6 @@
 package com.mountain.monk.leetcode;
 
-public class Problem_1143_LongestCommonSubsequence {
+public class NO_1143_LongestCommonSubsequence {
     /**
      * link:https://leetcode.cn/problems/longest-common-subsequence/
      * 解法：动态规划
