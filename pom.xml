@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>algorithm_notes</module>
+        <module>interview_questions</module>
     </modules>
 
     <properties>
