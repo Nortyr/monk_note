@@ -1,6 +1,6 @@
 package com.mountain.monk.leetcode;
 
-public class NO_62_UniquePaths {
+public class NO_0062_UniquePaths {
     public int uniquePaths(int m, int n) {
 
         return process(m-1,n-1,0,0);
