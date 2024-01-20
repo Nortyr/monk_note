@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-01-20T09:15:02.217Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="Gpali1cEK_UCIxbiX2Uq" version="22.1.18" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-20T09:33:48.041Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="4_4sNoRQzSlcUYzZwz3j" version="22.1.18" type="github">
   <diagram name="第 1 页" id="mAII5r3sc6-13Wg525YB">
-    <mxGraphModel dx="1434" dy="761" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2947" dy="1291" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -76,8 +76,61 @@
         <mxCell id="lIwQOKpQqBY4vv0LnBt--24" value="MyISAM" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=2;hachureGap=8;fillColor=#d5e8d4;fillStyle=dots;sketch=1;fontFamily=Comic Sans MS;fontSize=20;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="310" y="880" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="vDOKeEcO5x0YCkHmLcpW-2" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fff2cc;sketch=1;fillStyle=solid;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="80" y="1190" width="960" height="470" as="geometry" />
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;" edge="1" parent="1" source="vDOKeEcO5x0YCkHmLcpW-4" target="vDOKeEcO5x0YCkHmLcpW-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-4" value="&lt;font style=&quot;font-size: 22px;&quot; face=&quot;Comic Sans MS&quot;&gt;执行器想要更新记录&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fff2cc;sketch=1;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="190" y="1120" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=3;" edge="1" parent="1" source="vDOKeEcO5x0YCkHmLcpW-5" target="vDOKeEcO5x0YCkHmLcpW-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-5" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 22px;&quot;&gt;InnoDB将数据页添加进Buffer Pool&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fff2cc;sketch=1;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="190" y="1270" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=3;" edge="1" parent="1" source="vDOKeEcO5x0YCkHmLcpW-6" target="vDOKeEcO5x0YCkHmLcpW-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-6" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 22px;&quot;&gt;将记录旧值写入Undo log&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fff2cc;sketch=1;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="190" y="1440" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=3;" edge="1" parent="1" source="vDOKeEcO5x0YCkHmLcpW-9" target="vDOKeEcO5x0YCkHmLcpW-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-9" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 22px;&quot;&gt;执行器调用InnoDB修改数据&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fff2cc;sketch=1;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="190" y="1590" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=3;" edge="1" parent="1" source="vDOKeEcO5x0YCkHmLcpW-11" target="vDOKeEcO5x0YCkHmLcpW-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-11" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 22px;&quot;&gt;InnoDB修改页为脏页，添加进Flush链表&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fff2cc;sketch=1;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="190" y="1710" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=3;" edge="1" parent="1" source="vDOKeEcO5x0YCkHmLcpW-12" target="vDOKeEcO5x0YCkHmLcpW-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-12" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 22px;&quot;&gt;写入Redolog&lt;br&gt;（prepare阶段）&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fff2cc;sketch=1;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="190" y="1850" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=3;" edge="1" parent="1" source="vDOKeEcO5x0YCkHmLcpW-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="2140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-16" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 22px;&quot;&gt;写入BinLog&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fff2cc;sketch=1;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="190" y="1990" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-19" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 22px;&quot;&gt;写入Redolog&lt;br&gt;（commit状态）&lt;br&gt;&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fff2cc;sketch=1;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="190" y="2140" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-21" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-60" y="1780" as="sourcePoint" />
+            <mxPoint x="320" y="1820" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vDOKeEcO5x0YCkHmLcpW-22" value="Commit" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-170" y="1754" width="100" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
