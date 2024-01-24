@@ -1,6 +1,5 @@
 
-
-# 基础
+link:https://mp.weixin.qq.com/s?__biz=Mzg5ODYyNjIyMg==&mid=2247484756&idx=1&sn=4613bdec59713b350892aaf7ec2a6ce8&chksm=c05ee295f7296b83389e27b551d8108b8ff87759ac114c97784d2b982aaf04e91d7fdef1258f&token=1171582415&lang=zh_CN#rd# 基础
 
 ## 1. 什么是MySQL？
 
