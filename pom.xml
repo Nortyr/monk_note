@@ -11,7 +11,7 @@
     <modules>
         <module>algorithm_notes</module>
         <module>interview_questions</module>
-        <module>mybatis_demo</module>
+        <module>self_agent</module>
 
     </modules>
 
