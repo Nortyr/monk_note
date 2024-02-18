@@ -3,7 +3,7 @@ package com.mountain.monk.jvm;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Test {
+public class OOMTest {
 
     public static void main(String[] args) {
 
