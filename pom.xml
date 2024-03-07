@@ -12,7 +12,7 @@
         <module>algorithm_notes</module>
         <module>interview_questions</module>
         <module>self_agent</module>
-
+        <module>kafka_api</module>
     </modules>
 
     <properties>
