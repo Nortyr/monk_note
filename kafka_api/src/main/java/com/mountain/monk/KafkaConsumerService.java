@@ -10,6 +10,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
+import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -19,8 +20,9 @@ import java.util.Map;
 public class KafkaConsumerService {
 
     @KafkaListener(topics = "myTopic", groupId = "myGroup")
-    public void listen(String message) {
+    public void listen(String message, Acknowledgment ack) {
         System.out.println("Received message: " + message);
         // 处理消息逻辑
+        ack.acknowledge();
     }
 }
