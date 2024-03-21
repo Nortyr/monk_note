@@ -30,7 +30,7 @@ public class KafkaProducerService {
     public void sendMessage(String topic, String message) {
         ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, message);
         future.addCallback(success -> log.info("发送消息成功!"), failure -> log.error("发送消息失败!失败原因是:{}", failure.getMessage()));
-        KStream
+
     }
 }
 

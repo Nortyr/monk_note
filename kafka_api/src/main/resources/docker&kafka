@@ -3,6 +3,7 @@ docker-compose down
 docker-compose logs -f kafka
 docker-compose exec kafka /bin/bash
 
+cd /opt/kafka/bin/
 
 
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic myTopic --from-beginning

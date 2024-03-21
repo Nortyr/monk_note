@@ -16,6 +16,7 @@ public class SenderTest {
     @Test
     public void testSender(){
         producerService.sendMessage("myTopic", "Hello Kafka!");
+
     }
 
 

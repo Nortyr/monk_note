@@ -1,6 +1,6 @@
 spring:
   kafka:
-    bootstrap-servers: 192.168.0.103:9092
+    bootstrap-servers: 127.0.0.1:9092
     producer:
       batch-size: 16384 #批次大小，默认16k
       acks: -1 #ACK应答级别，指定分区中必须要有多少个副本收到消息之后才会认为消息成功写入，默认为1只要分区的leader副本成功写入消息；0表示不需要等待任何服务端响应；-1或all需要等待ISR中所有副本都成功写入消息
