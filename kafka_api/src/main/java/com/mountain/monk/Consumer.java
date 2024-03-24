@@ -10,10 +10,10 @@ import org.slf4j.LoggerFactory;
 public class Consumer {
     private static final Logger log = LoggerFactory.getLogger(Consumer.class);
 
-    @KafkaListener(topics = {"myTopic"})
-    public void listener(ConsumerRecord<String, String> record) {
-        String value = record.value();
-        log.info("【receive】:{}", value);
-    }
+//    @KafkaListener(topics = {"myTopics"})
+//    public void listener(ConsumerRecord<String, String> record) {
+//        String value = record.value();
+//        log.info("【receive】:{}", value);
+//    }
 }
 
