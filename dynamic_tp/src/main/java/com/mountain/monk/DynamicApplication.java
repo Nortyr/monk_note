@@ -19,10 +19,8 @@ public class DynamicApplication {
     public static void main(String[] args) {
 
         SpringApplication.run(DynamicApplication.class, args);
-        Executor dtpExecutor1 = DtpRegistry.getExecutor("dynamic-tp-test-1");
-        dtpExecutor1.execute(()->{
-            System.out.println("AAAAA");
-        });
+        Executor dtpExecutor1 = DtpRegistry.getExecutor("tpExecutor");
+
     }
 
 }

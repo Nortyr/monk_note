@@ -4,13 +4,24 @@ server:
 spring:
   application:
     name: dynamic-tp-zookeeper-demo
-  # 下面是接入zk配置中心的配置
   dynamic:
     tp:
-      config-type: properties # zookeeper只支持properties配置
+      config-type: json
       zookeeper:
-        config-version: 1.0.0 # 配置版本号
-        zk-connect-str: 127.0.0.1:2181 # zk配置中心，如果是集群用逗号分开
-        root-node: /configserver/userproject # 项目节点
-        node: dynamic-tp-zookeeper-demo # 配置文件节点
+        config-version: 1.0.0
+        zk-connect-str: 127.0.0.1:2181
+        root-node: /configserver/dev
+        node: dynamic-tp-zookeeper-demo   # json 用到
+        config-key: dynamic-tp-zookeeper-demo-json
 
+# 开启 SpringBoot Actuator Endpoint 暴露出DynamicTp指标接口
+# 开启 prometheus 指标采集端点
+management:
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'   # 测试使用，线上不要用*，按需开启
