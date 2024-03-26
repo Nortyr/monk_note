@@ -1,0 +1,41 @@
+docker network create myredis
+
+docker network ls
+
+docker network inspect e16928440a3e
+
+修改172.23.0.1
+
+
+
+for port in $(seq 6379 6384);
+do
+mkdir -p /Users/chenhui/learn/monk_note/redis_cluster/src/main/resources/redis-cluster/node-${port}/conf
+touch /Users/chenhui/learn/monk_note/redis_cluster/src/main/resources/redis-cluster/node-${port}/conf/redis.conf
+cat  << EOF > /Users/chenhui/learn/monk_note/redis_cluster/src/main/resources/redis-cluster/node-${port}/conf/redis.conf
+port ${port}
+bind 0.0.0.0
+protected-mode no
+daemonize no
+appendonly yes
+cluster-enabled yes
+cluster-config-file nodes.conf
+cluster-node-timeout 5000
+cluster-announce-ip 172.23.0.1
+cluster-announce-port ${port}
+cluster-announce-bus-port 1${port}
+EOF
+done
+
+
+for port in $(seq 6379 6384); \
+do \
+   docker run -it  -d -p ${port}:${port} -p 1${port}:1${port} \
+  --privileged=true -v /Users/chenhui/learn/monk_note/redis_cluster/src/main/resources/redis-cluster/node-${port}/conf/redis.conf:/usr/local/etc/redis/redis.conf \
+  --privileged=true -v /Users/chenhui/learn/monk_note/redis_cluster/src/main/resources/redis-cluster/node-${port}/data:/data \
+  --restart always --name redis-${port} --net myredis \
+  --sysctl net.core.somaxconn=1024 redis redis-server /usr/local/etc/redis/redis.conf
+done
+
+
+redis-cli  --cluster create 172.23.0.1:6379 172.23.0.1:6380 172.23.0.1:6381 172.23.0.1:6382 172.23.0.1:6383 172.23.0.1:6384   --cluster-replicas 1

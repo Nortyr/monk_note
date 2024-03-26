@@ -14,6 +14,8 @@
         <module>self_agent</module>
         <module>kafka_api</module>
         <module>dynamic_tp</module>
+        <module>redis_cluster</module>
+
     </modules>
 
     <properties>
