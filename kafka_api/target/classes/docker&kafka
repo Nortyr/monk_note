@@ -1,0 +1,28 @@
+docker-compose up -d
+docker-compose down
+docker-compose logs -f kafka
+docker-compose exec kafka /bin/bash
+
+cd /opt/kafka/bin/
+
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic myTopic --from-beginning
+kafka-console-producer.sh --broker-list localhost:9092 --topic myTopic
+
+
+
+./kafka-topics.sh --describe --topic myTopics --zookeeper zookeeper:2181
+
+./kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list localhost:9092 --topic myTopics --time -1 --offsets 1 | awk -F ":" '{sum += $3} END {print sum}'
+
+
+./kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic myTopics
+
+
+./kafka-console-producer.sh --broker-list localhost:9093 --topic myTopics
+
+
+./kafka-topics.sh --create --topic myTopics --replication-factor 3 --partitions 3 --zookeeper zookeeper:2181
+
+
+./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic myTopics

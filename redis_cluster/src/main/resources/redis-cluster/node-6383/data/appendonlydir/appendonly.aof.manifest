@@ -1,0 +1,2 @@
+file appendonly.aof.18.base.rdb seq 18 type b
+file appendonly.aof.18.incr.aof seq 18 type i
