@@ -35,6 +35,7 @@ public class KafkaProducerService {
         ProducerRecord<String,String> record=new ProducerRecord<>(topic,message);
         long timeStamp=System.currentTimeMillis()+5000L;
         record.headers().add(new RecordHeader("delay",String.valueOf(timeStamp).getBytes()));
+        //kafkaTemplate---kafkaProducer，添加到记录累加器中（RecordAccumulator），
         ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(record);
 
         future.addCallback(success -> log.info("发送消息成功!"), failure -> log.error("发送消息失败!失败原因是:{}", failure.getMessage()));
