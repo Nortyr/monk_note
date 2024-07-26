@@ -1,6 +1,6 @@
 package com.mountain.monk.leetcode;
 
-import java.util.List;
+import java.util.*;
 
 public class NO_0328_oddEvenList {
     public ListNode oddEvenList(ListNode head) {
