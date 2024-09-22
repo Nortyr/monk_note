@@ -8,9 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="dynamic_tp" />
         <module name="interview_questions" />
+        <module name="kafka_api" />
+        <module name="mybatis-api" />
         <module name="self_agent" />
         <module name="redis_cluster" />
-        <module name="kafka_api" />
         <module name="algorithm_notes" />
       </profile>
     </annotationProcessing>

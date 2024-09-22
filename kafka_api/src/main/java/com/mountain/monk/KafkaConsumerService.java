@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 @Service
 public class KafkaConsumerService {
@@ -40,5 +41,48 @@ public class KafkaConsumerService {
 
         // 处理消息逻辑
         ack.acknowledge();
+    }
+
+    public static void main(String[] args) {
+        new KafkaConsumerService().minWindow("ADOBECODEBANC","ABC");
+    }
+    public String minWindow(String s, String t) {
+        Map<Character,Integer> targetMap=new HashMap<>();
+        for (int i = 0; i < t.length(); i++) {
+            targetMap.put(t.charAt(i),targetMap.getOrDefault(t.charAt(i),0)+1);
+        }
+        Map<Character,Integer> map=new HashMap<>();
+        String result="";
+        int l=0;
+        for (int i = 0; i < s.length(); i++) {
+            map.put(s.charAt(i),map.getOrDefault(s.charAt(i),0)+1);
+            while(check(map,targetMap)){
+                result="".equals(result)||result.length()>(i-l+1)?s.substring(l,i+1):result;
+                map.put(s.charAt(l),map.get(s.charAt(l))-1);
+                l++;
+
+            }
+        }
+        int end=s.length()-1;
+        while(check(map,targetMap)){
+            result="".equals(result)||result.length()>(end-l+1)?s.substring(l,s.length()+1):result;
+            map.put(s.charAt(l),map.get(s.charAt(l))-1);
+            l++;
+
+        }
+        return result;
+
+    }
+
+    private boolean check(Map<Character, Integer> map, Map<Character, Integer> targetMap) {
+        if(map.size()<targetMap.size()){
+            return false;
+        }
+        for (Map.Entry<Character, Integer> entry : targetMap.entrySet()) {
+            if(!map.containsKey(entry.getKey())||map.getOrDefault(entry.getKey(),0)<targetMap.get(entry.getKey())){
+                return false;
+            }
+        }
+        return true;
     }
 }
