@@ -5,21 +5,22 @@ import java.util.List;
 
 public class NO_0234_IsPalindrome {
     public boolean isPalindrome(ListNode head) {
-        if(head==null) return true;
-        List<Integer> list=new ArrayList<>();
-        ListNode cur=head;
-        while(cur!=null){
-            list.add(cur.val);
-            cur=cur.next;
+        if (head == null || head.next == null) {
+            return false;
         }
-
-        int left=0,right=list.size()-1;
-        while(left<right){
-            if(list.get(left)!=list.get(right)){
+        List<Integer> list = new ArrayList<>();
+        ListNode cur = head;
+        while (cur != null) {
+            list.add(cur.val);
+            cur = cur.next;
+        }
+        int l=0,r=list.size()-1;
+        while (l<r) {
+            if (list.get(l) != list.get(r)) {
                 return false;
             }
-            left++;
-            right--;
+            l++;
+            r--;
         }
         return true;
 
