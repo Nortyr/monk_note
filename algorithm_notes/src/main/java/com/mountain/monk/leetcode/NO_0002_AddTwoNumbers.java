@@ -6,61 +6,39 @@ public class NO_0002_AddTwoNumbers {
         ListNode curL=l1;
         ListNode curR=l2;
         ListNode head=new ListNode(-1);
-        ListNode cur=null;
-        boolean flag=false;
-        while(curL!=null&&curR!=null){
-            int val=curL.val+curR.val;
-            val = flag?val+1:val;
-            flag=false;
-            if(val>=10){
-                flag=true;
-                val=val%10;
-            }
-            head.next=new ListNode(val);
-            head.next.next=cur;
-            cur=head.next;
+        ListNode temp=head;
+        int preVal=0;
+        while(curL!=null && curR!=null){
+            int sum=curL.val+curR.val+preVal;
+            preVal=sum/10;
+            int cur=sum%10;
+            temp.next=new ListNode(cur);
+            temp=temp.next;
             curL=curL.next;
             curR=curR.next;
         }
-
-        while (curL!=null){
-            int val=curL.val;
-            val = flag?val+1:val;
-            flag=false;
-            if(val>=10){
-                flag=true;
-                val=val%10;
-            }
-            head.next=new ListNode(val);
-            head.next.next=cur;
-            cur=head.next;
+        while(curL!=null ){
+            int sum=curL.val+preVal;
+            preVal=sum/10;
+            int cur=sum%10;
+            temp.next=new ListNode(cur);
+            temp=temp.next;
             curL=curL.next;
-
         }
-
-        while (curR!=null){
-            int val=curR.val;
-            val = flag?val+1:val;
-            flag=false;
-            if(val>=10){
-                flag=true;
-                val=val%10;
-            }
-            head.next=new ListNode(val);
-            head.next.next=cur;
-            cur=head.next;
+        while(curR!=null ){
+            int sum=curR.val+preVal;
+            preVal=sum/10;
+            int cur=sum%10;
+            temp.next=new ListNode(cur);
+            temp=temp.next;
             curR=curR.next;
-
+        }
+        if(preVal>0){
+            temp.next=new ListNode(preVal);
+            temp=temp.next;
         }
 
-        if(flag){
-            head.next=new ListNode(1);
-            head.next.next=cur;
-            cur=head.next;
-        }
-
-        ListNode result=reverse(head.next);
-        return result;
+        return head.next;
     }
 
     private ListNode reverse(ListNode cur) {
