@@ -5,22 +5,16 @@ import java.util.Map;
 
 public class NO_0138_CopyRandomList {
     public Node copyRandomList(Node head) {
-        Node next=head,pre=null;
-        Map<Node,Node> map=new HashMap<>();
-        while (next!=null){
-
-            map.put(next,new Node(next.val));
-            if(pre!=null){
-                map.get(pre).next=map.get(next);
-            }
-            pre=next;
-            next=next.next;
+        Node cur = head;
+        Map<Node, Node> map = new HashMap<>();
+        while (cur != null) {
+            map.put(cur, new Node(cur.val));
+            cur = cur.next;
         }
-        for (Map.Entry<Node,Node>entry:map.entrySet()){
-            entry.getValue().random=map.get(entry.getKey().random);
-        }
-
-
+        map.forEach((k, v) -> {
+            v.next = map.get(k.next);
+            v.random = map.get(k.random);
+        });
         return map.get(head);
     }
 }
