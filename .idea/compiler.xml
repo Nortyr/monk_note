@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="dynamic_tp" />
         <module name="interview_questions" />
+        <module name="provider_demo" />
+        <module name="provider_demo (1)" />
         <module name="kafka_api" />
         <module name="mybatis-api" />
         <module name="self_agent" />
@@ -15,5 +17,8 @@
         <module name="algorithm_notes" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring_cloud_demo" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
