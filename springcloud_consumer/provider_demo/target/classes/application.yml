@@ -1,0 +1,17 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+server:
+  port: 8082
+self:
+  name: local
+spring:
+  application:
+    name: provider-demo
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.12:8848
+

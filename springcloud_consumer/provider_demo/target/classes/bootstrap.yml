@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: provider-demo
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        file-extension: yml
+        group: DEV_GROUP
+        namespace: 691c5289-3c67-47b9-9393-5a7d6bed7548
+        server-addr: 192.168.1.12:8848
+      discovery:
+        server-addr: 192.168.1.12:8848

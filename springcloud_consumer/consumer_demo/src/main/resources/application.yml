@@ -1,0 +1,20 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+server:
+  port: 8084
+spring:
+  application:
+    name: consumer-demo
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.12:8848
+nacos:
+  naming:
+    client:
+      upgraded: true
+    push:
+      enabled: true
