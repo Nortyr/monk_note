@@ -1,21 +1,27 @@
 package com.mountain.monk.leetcode;
 
 public class NO_0230_kthSmallest {
-    int num=0;
-    TreeNode result=null;
+    int curr=0;
     public int kthSmallest(TreeNode root, int k) {
-        dfs(root,k);
-        return result.val;
+        return process(root,k).val;
     }
 
-    void dfs(TreeNode root,int k){
-        if(root==null) return;
-        if(result!=null) return;
-        num++;
-        if(num==k){
-            result=root;
+    public TreeNode process(TreeNode root, int k){
+        if(root==null){
+            return null;
         }
-        dfs(root.left,k);
-        dfs(root.right,k);
+        TreeNode left=process(root.left,k);
+        if(left!=null){
+            return left;
+        }
+        curr++;
+        if(curr==k){
+            return root;
+        }
+        TreeNode right=process(root.right,k);
+        if(right!=null){
+            return right;
+        }
+        return null;
     }
 }

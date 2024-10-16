@@ -1,9 +1,6 @@
 package com.mountain.monk.leetcode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class NO_0199_BinaryTreeRightSideView {
 
@@ -16,6 +13,31 @@ public class NO_0199_BinaryTreeRightSideView {
      * @param root
      * @return
      */
+    public List<Integer> rightSideView1(TreeNode root) {
+        LinkedList<TreeNode> queue=new LinkedList<>();
+        List<Integer> list=new ArrayList<>();
+        if(root==null){
+            return list;
+        }
+        queue.add(root);
+        while (!queue.isEmpty()){
+            list.add(queue.peekLast().val);
+            LinkedList<TreeNode> tmp=new LinkedList<>();
+            while (!queue.isEmpty()){
+                TreeNode node=queue.pollFirst();
+                if (node.left != null){
+                    tmp.addLast(node.left);
+                }
+                if (node.right != null){
+                    tmp.addLast(node.right);
+                }
+            }
+            queue=tmp;
+
+        }
+
+        return list;
+    }
 
     public List<Integer> rightSideView(TreeNode root) {
         List<Integer> list=new ArrayList<>();
