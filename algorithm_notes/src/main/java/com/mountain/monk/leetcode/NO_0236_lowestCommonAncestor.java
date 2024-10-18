@@ -23,4 +23,5 @@ public class NO_0236_lowestCommonAncestor {
         return leftFlag || rightFlag || (root.val == p.val || root.val == q.val);
 
     }
+
 }
